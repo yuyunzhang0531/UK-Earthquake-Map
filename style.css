@@ -1,0 +1,177 @@
+/* 🌍 地图样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#map {
+    width: 100%;
+    height: 500px; /* ✅ 确保地图不会覆盖整个页面 */
+    position: relative; /* ✅ 避免 canvas 被盖住 */
+}
+
+/* 🏷️ 图例样式 */
+#legend {
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    backdrop-filter: blur(10px); /* 毛玻璃效果 */
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 阴影 */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* 边框 */
+    width: 200px;
+    text-align: center;
+    transition: background 0.3s ease; /* 动态效果 */
+}
+
+#legend:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(230, 230, 230, 0.9)); /* 悬停时更明显 */
+}
+
+#legend h4 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 0;
+    font-size: 16px;
+    color: #333; /* 标题颜色 */
+}
+
+.legend-key {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    margin: 3px;
+}
+
+/* 🌍 标题样式 */
+#title {
+    position: absolute;
+    top: 15px;
+    left: 500px; /* ✅ 让标题居中 */
+    background: rgba(255, 255, 255, 0.9); /* 透明白色背景 */
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333; /* 深灰色 */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 阴影 */
+    border: 2px solid rgba(0, 0, 0, 0.1); /* 轻微边框 */
+    z-index: 20; /* 确保它在地图上层 */
+    font-family: "Arial", sans-serif;
+    max-width: 460px; /* 限制宽度，防止太长 */
+    word-wrap: break-word; /* 文字超出换行 */
+}
+
+#title:hover {
+    background: rgba(255, 255, 255, 1); /* 悬停时背景变亮 */
+    transition: 0.3s ease-in-out;
+}
+
+/* 📍 弹窗样式 */
+.mapboxgl-popup-content {
+    color: black !important;  /* 设置弹窗文字颜色为黑色 */
+    background: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+.mapboxgl-popup-tip {
+    border-top-color: white !important;
+}
+
+/* 🎛️ 工具栏样式 */
+#toolbar {
+    position: absolute;
+    top: 55px;
+    left: 10px;
+    background: white;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 90px;
+    left: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 🎚️ 震级时间滑块 */
+#timeControl {
+    position: absolute;
+    top: 100px;  /* ✅ 滑块放在震级筛选器下面 */
+    left: 10px;
+    background: white;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    z-index: 1000;
+}
+
+/* 📊 震级柱状图样式 */
+#chart-container {
+    width: 350px;
+    height: 250px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+
+}
+
+/* 🔍 搜索框 */
+#search-box {
+    position: absolute;
+    top: 10px; /* ✅ 让搜索框在最上面 */
+    left: 10px;
+    z-index: 20;
+}
+
+/* 🔘 震级筛选器 */
+#filters-container {
+    position: absolute;
+    top: 20px; /* ✅ 让筛选器在搜索框下面 */
+    left: 10px;
+    z-index: 20;
+}
+
+/* 🎚️ 时间滑块 */
+#time-slider-container {
+    position: absolute;
+    top: 90px; /* ✅ 让时间滑块在筛选器下面 */
+    left: 10px;
+    z-index: 20;
+}
+
+/* ✅ 让放大缩小控件（NavigationControl）往上一点 */
+.mapboxgl-ctrl-bottom-left .mapboxgl-ctrl {
+    margin-bottom: 80px; /* ✅ 让定位按钮在它下面 */
+}
+
+/* ✅ 让定位按钮（GeolocateControl）稍微靠上 */
+.mapboxgl-ctrl-geolocate {
+    margin-bottom: 20px;
+}

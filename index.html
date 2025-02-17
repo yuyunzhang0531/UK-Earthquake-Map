@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Earthquake Heatmap</title>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+<div id="title">🌍 UK Earthquake Data Visualisation Heatmap</div>
+ <div id="chart-container">
+    <canvas id="magnitudeChart"></canvas>
+</div>
+
+</div>
+  <div id="toolbar">
+    <label for="magnitudeFilter">Magnitude filter：</label>
+    <select id="magnitudeFilter">
+        <option value="all">ALL</option>
+        <option value="1">ML > 1</option>
+        <option value="3">ML > 3</option>
+        <option value="6">ML > 6</option>
+    </select>
+</div>
+
+    <div id="legend">
+    <h4>Magnitude Legend</h4>
+    <div class="legend-key" style="background-color: hsl(193, 94%, 57%);"><0.2</div>
+    <div class="legend-key" style="background-color: hsl(167, 100%, 75%);">0.4</div>
+        <div class="legend-key" style="background-color:hsl(56, 100%, 60%);">0.6</div>
+        <div class="legend-key" style="background-color: hsl(24, 100%, 55%);">0.8</div>
+        <div class="legend-key" style="background-color:hsl(0, 83%, 52%);">1</div>
+
+<div id="geolocate-container"></div>
+
+</div>
+</div>
+<div id="timeControl">
+    <label for="timeSlider">Earthquakes in the last<span id="timeLabel"> 30</span> days</label>
+    <input type="range" id="timeSlider" min="1" max="30" value="30">
+</div>
+
+
+
+
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
